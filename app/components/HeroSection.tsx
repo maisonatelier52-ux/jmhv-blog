@@ -87,7 +87,8 @@ export default function Hero() {
               backgroundImage:
                 "linear-gradient(54deg, rgb(255,255,255) -22%, rgba(0,0,0,0) 134%)",
               WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              WebkitTextStroke: "1px transparent",
+              willChange: "transform",
               backgroundClip: "text",
             }}
           >
