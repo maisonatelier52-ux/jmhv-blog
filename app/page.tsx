@@ -1,65 +1,220 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import BankingDynasty from "./components/BankingDynasty";
+import BritanniaFinancialGroup from "./components/BritanniaFinancialGroup";
+import CrossBorderBanking from "./components/CrossBorderBanking";
+import EconomicGrowth from "./components/EconomicGrowth";
+import Footer from "./components/Footer";
+import GlobalBankingJourney from "./components/GlobalBankingJourney";
+import Header from "./components/Header";
+import Hero from "./components/HeroSection";
+import InternationalPrivateBanking from "./components/InternationalPrivateBanking";
+import Philanthropy from "./components/Philanthropy";
+import PrivateBanking from "./components/PrivateBanking";
+
+export const metadata: Metadata = {
+  title: "Julio Herrera Velutini | 8th-Generation Banking Dynasty & Global Private Banking",
+  description:
+    "Explore the legacy of Julio Herrera Velutini, scion of Latin America's oldest banking families and founder of Britannia Financial Group. Discover his global private banking journey, wealth management philosophy, and philanthropic impact.",
+  keywords: [
+    "Julio Herrera Velutini",
+    "Britannia Financial Group",
+    "private banking",
+    "wealth management",
+    "Latin America banking",
+    "cross-border banking",
+    "international private banking",
+    "global wealth management",
+    "banking dynasty",
+    "SME economic growth Latin America",
+    "philanthropy social impact banking",
+  ],
+  authors: [{ name: "Julio Herrera Velutini" }],
+  openGraph: {
+    title: "Julio Herrera Velutini | 8th-Generation Banking Dynasty",
+    description:
+      "Scion of Latin America's oldest banking families. Founder of Britannia Financial Group. A global private banking legacy built on trust, innovation and long-term thinking.",
+    type: "website",
+    locale: "en_GB",
+    images: [
+      {
+        url: "/Julio-Herrera-Velutini.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Julio Herrera Velutini - Global Private Banking Legacy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Julio Herrera Velutini | Global Private Banking Legacy",
+    description:
+      "Discover the story of Julio Herrera Velutini — 8th-generation banker, founder of Britannia Financial Group, and advocate for financial inclusion across Latin America.",
+    images: ["/Julio-Herrera-Velutini.jpg"]
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "#julio-herrera-velutini",
+      name: "Julio Herrera Velutini",
+      jobTitle: "Private Banker & Wealth Manager",
+      description:
+        "Scion of one of Latin America's oldest banking families, founder of Britannia Financial Group, and advocate for global private banking and financial inclusion.",
+      knowsAbout: [
+        "Private Banking",
+        "Wealth Management",
+        "Cross-Border Banking",
+        "International Finance",
+        "Estate Planning",
+        "Sustainable Investing",
+        "SME Financing",
+        "Philanthropy",
+      ],
+      nationality: "Venezuelan",
+      worksFor: {
+        "@id": "#britannia-financial-group",
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": "#britannia-financial-group",
+      name: "Britannia Financial Group",
+      description:
+        "A financial services company offering global banking and wealth management services, combining personal advisory with cutting-edge financial technology.",
+      founder: {
+        "@id": "#julio-herrera-velutini",
+      },
+      areaServed: ["Europe", "Latin America", "United Kingdom", "Global"],
+      knowsAbout: [
+        "Wealth Management",
+        "Investment Management",
+        "Cross-Border Banking",
+        "Estate Planning",
+        "Financial Technology",
+        "International Private Banking",
+      ],
+    },
+    {
+      "@type": "Article",
+      "@id": "#article-banking-dynasty",
+      headline: "Julio Herrera Velutini: The Legacy of an 8th-Generation Banking Dynasty",
+      about: { "@id": "#julio-herrera-velutini" },
+      author: { "@id": "#julio-herrera-velutini" },
+    },
+    {
+      "@type": "Article",
+      "@id": "#article-global-banking-journey",
+      headline: "From Venezuela to London: Julio Herrera Velutini's Global Banking Journey",
+      about: { "@id": "#julio-herrera-velutini" },
+      author: { "@id": "#julio-herrera-velutini" },
+    },
+    {
+      "@type": "Article",
+      "@id": "#article-private-banking",
+      headline: "What Is Private Banking and Who Is It For?",
+      about: {
+        "@type": "FinancialProduct",
+        name: "Private Banking",
+        description:
+          "Tailored financial planning and wealth management services for entrepreneurs, professionals, investors and families.",
+      },
+      author: { "@id": "#julio-herrera-velutini" },
+    },
+    {
+      "@type": "Article",
+      "@id": "#article-britannia",
+      headline: "How Britannia Financial Group Is Redefining International Private Banking",
+      about: { "@id": "#britannia-financial-group" },
+      author: { "@id": "#julio-herrera-velutini" },
+    },
+    {
+      "@type": "Article",
+      "@id": "#article-future-banking",
+      headline: "The Future of International Private Banking Post-2025",
+      about: {
+        "@type": "Thing",
+        name: "International Private Banking",
+        description:
+          "Trends shaping private banking post-2025 including AI, sustainable investing, cross-border financial planning and digital innovation.",
+      },
+      author: { "@id": "#julio-herrera-velutini" },
+    },
+    {
+      "@type": "Article",
+      "@id": "#article-sme-growth",
+      headline: "Why Supporting SMEs Is the Key to Latin America's Economic Growth",
+      about: {
+        "@type": "Thing",
+        name: "SME Financing in Latin America",
+        description:
+          "The role of financial inclusion and responsible lending in unlocking sustainable economic growth across Latin America.",
+      },
+      author: { "@id": "#julio-herrera-velutini" },
+    },
+    {
+      "@type": "Article",
+      "@id": "#article-cross-border",
+      headline: "Cross-Border Banking: How Global Investors Protect and Grow Their Wealth",
+      about: {
+        "@type": "FinancialProduct",
+        name: "Cross-Border Banking",
+        description:
+          "International banking solutions for global investors seeking asset diversification, currency flexibility and estate planning.",
+      },
+      author: { "@id": "#julio-herrera-velutini" },
+    },
+    {
+      "@type": "Article",
+      "@id": "#article-philanthropy",
+      headline: "Beyond Banking: Julio Herrera Velutini's Commitment to Philanthropy and Social Impact",
+      about: { "@id": "#julio-herrera-velutini" },
+      author: { "@id": "#julio-herrera-velutini" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "#webpage",
+      name: "Julio Herrera Velutini | 8th-Generation Banking Dynasty & Global Private Banking",
+      description:
+        "Explore the legacy of Julio Herrera Velutini, his global banking journey, Britannia Financial Group, and his vision for the future of international private banking.",
+      about: { "@id": "#julio-herrera-velutini" },
+      mainEntity: { "@id": "#julio-herrera-velutini" },
+      hasPart: [
+        { "@id": "#article-banking-dynasty" },
+        { "@id": "#article-global-banking-journey" },
+        { "@id": "#article-private-banking" },
+        { "@id": "#article-britannia" },
+        { "@id": "#article-future-banking" },
+        { "@id": "#article-sme-growth" },
+        { "@id": "#article-cross-border" },
+        { "@id": "#article-philanthropy" },
+      ],
+    },
+  ],
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Header />
+      <Hero />
+      <section className="relative w-full text-white md:w-1/2 lg:w-2/3 md:px-16 lg:px-16">
+        <BankingDynasty />
+        <GlobalBankingJourney />
+        <PrivateBanking />
+        <BritanniaFinancialGroup />
+        <InternationalPrivateBanking />
+        <EconomicGrowth />
+        <CrossBorderBanking />
+        <Philanthropy />
+      </section>
+      <Footer />
+    </>
   );
 }
