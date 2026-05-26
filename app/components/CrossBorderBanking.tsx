@@ -1,6 +1,6 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function CrossBorderBanking() {
   const ref = useRef<HTMLElement | null>(null);
@@ -8,21 +8,11 @@ export default function CrossBorderBanking() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
-      },
-      {
-        threshold: 0.2,
-      }
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.2 }
     );
-
     if (ref.current) observer.observe(ref.current);
-
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
+    return () => { if (ref.current) observer.unobserve(ref.current); };
   }, []);
 
   return (
@@ -31,60 +21,47 @@ export default function CrossBorderBanking() {
       className={`
         backdrop-blur-xl bg-black/20 px-5 py-8
         transition-all duration-1000 ease-out
-        ${
-          visible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-16 opacity-0"
-        }
+        ${visible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}
       `}
     >
-      <div
-        className="
-          flex flex-col gap-10 border-t border-zinc-700
-          lg:grid lg:grid-cols-2 lg:gap-16
-        "
-      >
+      <div className="flex flex-col gap-10 border-t border-zinc-700 lg:grid lg:grid-cols-2 lg:gap-16">
 
         {/* LEFT */}
         <div
           className={`
             border-t-2 py-10
             transition-all duration-1000 delay-300
-            ${
-              visible
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-20 opacity-0"
-            }
+            ${visible ? "translate-x-0 opacity-100" : "-translate-x-20 opacity-0"}
           `}
         >
-          <div
-            className="
-              sticky lg:top-15
-              inline-flex items-start gap-6
-            "
-          >
-            {/* NUMBER */}
-            <span className="shrink-0 text-md text-zinc-400">
-              07
-            </span>
+          <div className="sticky lg:top-15 flex flex-col gap-6">
 
-            {/* TITLE */}
-            <h2 className="scale-y-125 font-serif text-xl italic leading-tight text-zinc-400 md:text-2xl">
-              Cross-Border Banking: How Global Investors Protect and Grow Their Wealth
-            </h2>
+            <div className="inline-flex items-start gap-6">
+              <span className="shrink-0 text-md text-zinc-400">07</span>
+              <h2 className="scale-y-125 font-serif text-xl italic leading-tight text-zinc-400 md:text-2xl">
+                Cross-Border Banking: How Global Investors Protect and Grow Their Wealth
+              </h2>
+            </div>
+
+            <div className="relative w-full aspect-[4/5] overflow-hidden rounded-sm">
+              <Image
+                src="/Julio_Herrera_Velutini38.jpg"
+                alt="Cross-border banking"
+                fill
+                className="object-cover object-top grayscale"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+
           </div>
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT — unchanged */}
         <div
           className={`
             flex flex-col gap-5 py-10 p-5
             transition-all duration-1000 delay-300
-            ${
-              visible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-20 opacity-0"
-            }
+            ${visible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}
           `}
         >
           <p className="text-zinc-400 leading-relaxed text-[15px]">
