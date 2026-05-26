@@ -29,15 +29,21 @@ export const metadata: Metadata = {
     "philanthropy social impact banking",
   ],
   authors: [{ name: "Julio Herrera Velutini" }],
+  metadataBase: new URL("http://herrera-velutini.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Julio Herrera Velutini | 8th-Generation Banking Dynasty",
     description:
       "Scion of Latin America's oldest banking families. Founder of Britannia Financial Group. A global private banking legacy built on trust, innovation and long-term thinking.",
     type: "website",
+    url: "http://herrera-velutini.com",
     locale: "en_GB",
+    siteName: "Julio Herrera Velutini",
     images: [
       {
-        url: "/Julio-Herrera-Velutini.jpg",
+        url: "http://herrera-velutini.com/Julio-Herrera-Velutini.jpg",
         width: 1200,
         height: 630,
         alt: "Julio Herrera Velutini - Global Private Banking Legacy",
@@ -49,20 +55,30 @@ export const metadata: Metadata = {
     title: "Julio Herrera Velutini | Global Private Banking Legacy",
     description:
       "Discover the story of Julio Herrera Velutini — 8th-generation banker, founder of Britannia Financial Group, and advocate for financial inclusion across Latin America.",
-    images: ["/Julio-Herrera-Velutini.jpg"]
+    images: ["http://herrera-velutini.com/Julio-Herrera-Velutini.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
-const jsonLd = {
+const profileJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Person",
-      "@id": "#julio-herrera-velutini",
+      "@id": "http://herrera-velutini.com/#julio-herrera-velutini",
       name: "Julio Herrera Velutini",
+      url: "http://herrera-velutini.com",
+      sameAs: [
+        "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
+        "https://www.houseofherrera.com/",
+      ],
       jobTitle: "Private Banker & Wealth Manager",
       description:
         "Scion of one of Latin America's oldest banking families, founder of Britannia Financial Group, and advocate for global private banking and financial inclusion.",
+      image: "http://herrera-velutini.com/Julio_Herrera_Velutini.jpg",
       knowsAbout: [
         "Private Banking",
         "Wealth Management",
@@ -75,122 +91,144 @@ const jsonLd = {
       ],
       nationality: "Venezuelan",
       worksFor: {
-        "@id": "#britannia-financial-group",
+        "@id": "http://herrera-velutini.com/#britannia-financial-group",
       },
     },
     {
       "@type": "Organization",
-      "@id": "#britannia-financial-group",
+      "@id": "http://herrera-velutini.com/#britannia-financial-group",
       name: "Britannia Financial Group",
+      url: "https://www.houseofherrera.com/",
       description:
         "A financial services company offering global banking and wealth management services, combining personal advisory with cutting-edge financial technology.",
       founder: {
-        "@id": "#julio-herrera-velutini",
+        "@id": "http://herrera-velutini.com/#julio-herrera-velutini",
       },
       areaServed: ["Europe", "Latin America", "United Kingdom", "Global"],
-      knowsAbout: [
-        "Wealth Management",
-        "Investment Management",
-        "Cross-Border Banking",
-        "Estate Planning",
-        "Financial Technology",
-        "International Private Banking",
+    },
+    {
+      "@type": "Blog",
+      "@id": "http://herrera-velutini.com/#blog",
+      url: "http://herrera-velutini.com",
+      name: "Julio Herrera Velutini | Personal Blog",
+      description:
+        "The personal blog of Julio Herrera Velutini — reflections on private banking, global wealth management, Latin American finance, and philanthropy.",
+      author: {
+        "@id": "http://herrera-velutini.com/#julio-herrera-velutini",
+      },
+      inLanguage: "en",
+      blogPost: [
+        { "@id": "http://herrera-velutini.com/#article-banking-dynasty" },
+        { "@id": "http://herrera-velutini.com/#article-global-banking-journey" },
+        { "@id": "http://herrera-velutini.com/#article-private-banking" },
+        { "@id": "http://herrera-velutini.com/#article-britannia" },
+        { "@id": "http://herrera-velutini.com/#article-future-banking" },
+        { "@id": "http://herrera-velutini.com/#article-sme-growth" },
+        { "@id": "http://herrera-velutini.com/#article-cross-border" },
+        { "@id": "http://herrera-velutini.com/#article-philanthropy" },
       ],
     },
     {
-      "@type": "Article",
-      "@id": "#article-banking-dynasty",
+      "@type": "BlogPosting",
+      "@id": "http://herrera-velutini.com/#article-banking-dynasty",
       headline: "Julio Herrera Velutini: The Legacy of an 8th-Generation Banking Dynasty",
-      about: { "@id": "#julio-herrera-velutini" },
-      author: { "@id": "#julio-herrera-velutini" },
+      url: "http://herrera-velutini.com/#article-banking-dynasty",
+      author: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
+      about: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
+      isPartOf: { "@id": "http://herrera-velutini.com/#blog" },
     },
     {
-      "@type": "Article",
-      "@id": "#article-global-banking-journey",
+      "@type": "BlogPosting",
+      "@id": "http://herrera-velutini.com/#article-global-banking-journey",
       headline: "From Venezuela to London: Julio Herrera Velutini's Global Banking Journey",
-      about: { "@id": "#julio-herrera-velutini" },
-      author: { "@id": "#julio-herrera-velutini" },
+      url: "http://herrera-velutini.com/#article-global-banking-journey",
+      author: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
+      about: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
+      isPartOf: { "@id": "http://herrera-velutini.com/#blog" },
     },
     {
-      "@type": "Article",
-      "@id": "#article-private-banking",
+      "@type": "BlogPosting",
+      "@id": "http://herrera-velutini.com/#article-private-banking",
       headline: "What Is Private Banking and Who Is It For?",
+      url: "http://herrera-velutini.com/#article-private-banking",
+      author: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
       about: {
         "@type": "FinancialProduct",
         name: "Private Banking",
         description:
           "Tailored financial planning and wealth management services for entrepreneurs, professionals, investors and families.",
       },
-      author: { "@id": "#julio-herrera-velutini" },
+      isPartOf: { "@id": "http://herrera-velutini.com/#blog" },
     },
     {
-      "@type": "Article",
-      "@id": "#article-britannia",
+      "@type": "BlogPosting",
+      "@id": "http://herrera-velutini.com/#article-britannia",
       headline: "How Britannia Financial Group Is Redefining International Private Banking",
-      about: { "@id": "#britannia-financial-group" },
-      author: { "@id": "#julio-herrera-velutini" },
+      url: "http://herrera-velutini.com/#article-britannia",
+      author: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
+      about: { "@id": "http://herrera-velutini.com/#britannia-financial-group" },
+      isPartOf: { "@id": "http://herrera-velutini.com/#blog" },
     },
     {
-      "@type": "Article",
-      "@id": "#article-future-banking",
+      "@type": "BlogPosting",
+      "@id": "http://herrera-velutini.com/#article-future-banking",
       headline: "The Future of International Private Banking Post-2025",
+      url: "http://herrera-velutini.com/#article-future-banking",
+      author: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
       about: {
         "@type": "Thing",
         name: "International Private Banking",
         description:
           "Trends shaping private banking post-2025 including AI, sustainable investing, cross-border financial planning and digital innovation.",
       },
-      author: { "@id": "#julio-herrera-velutini" },
+      isPartOf: { "@id": "http://herrera-velutini.com/#blog" },
     },
     {
-      "@type": "Article",
-      "@id": "#article-sme-growth",
+      "@type": "BlogPosting",
+      "@id": "http://herrera-velutini.com/#article-sme-growth",
       headline: "Why Supporting SMEs Is the Key to Latin America's Economic Growth",
+      url: "http://herrera-velutini.com/#article-sme-growth",
+      author: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
       about: {
         "@type": "Thing",
         name: "SME Financing in Latin America",
         description:
           "The role of financial inclusion and responsible lending in unlocking sustainable economic growth across Latin America.",
       },
-      author: { "@id": "#julio-herrera-velutini" },
+      isPartOf: { "@id": "http://herrera-velutini.com/#blog" },
     },
     {
-      "@type": "Article",
-      "@id": "#article-cross-border",
+      "@type": "BlogPosting",
+      "@id": "http://herrera-velutini.com/#article-cross-border",
       headline: "Cross-Border Banking: How Global Investors Protect and Grow Their Wealth",
+      url: "http://herrera-velutini.com/#article-cross-border",
+      author: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
       about: {
         "@type": "FinancialProduct",
         name: "Cross-Border Banking",
         description:
           "International banking solutions for global investors seeking asset diversification, currency flexibility and estate planning.",
       },
-      author: { "@id": "#julio-herrera-velutini" },
+      isPartOf: { "@id": "http://herrera-velutini.com/#blog" },
     },
     {
-      "@type": "Article",
-      "@id": "#article-philanthropy",
+      "@type": "BlogPosting",
+      "@id": "http://herrera-velutini.com/#article-philanthropy",
       headline: "Beyond Banking: Julio Herrera Velutini's Commitment to Philanthropy and Social Impact",
-      about: { "@id": "#julio-herrera-velutini" },
-      author: { "@id": "#julio-herrera-velutini" },
+      url: "http://herrera-velutini.com/#article-philanthropy",
+      author: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
+      about: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
+      isPartOf: { "@id": "http://herrera-velutini.com/#blog" },
     },
     {
       "@type": "WebPage",
-      "@id": "#webpage",
-      name: "Julio Herrera Velutini | 8th-Generation Banking Dynasty & Global Private Banking",
+      "@id": "http://herrera-velutini.com/#webpage",
+      url: "http://herrera-velutini.com",
+      name: "Julio Herrera Velutini | Personal Blog",
       description:
-        "Explore the legacy of Julio Herrera Velutini, his global banking journey, Britannia Financial Group, and his vision for the future of international private banking.",
-      about: { "@id": "#julio-herrera-velutini" },
-      mainEntity: { "@id": "#julio-herrera-velutini" },
-      hasPart: [
-        { "@id": "#article-banking-dynasty" },
-        { "@id": "#article-global-banking-journey" },
-        { "@id": "#article-private-banking" },
-        { "@id": "#article-britannia" },
-        { "@id": "#article-future-banking" },
-        { "@id": "#article-sme-growth" },
-        { "@id": "#article-cross-border" },
-        { "@id": "#article-philanthropy" },
-      ],
+        "The personal blog of Julio Herrera Velutini — reflections on private banking, global wealth management, Latin American finance, and philanthropy.",
+      about: { "@id": "http://herrera-velutini.com/#julio-herrera-velutini" },
+      mainEntity: { "@id": "http://herrera-velutini.com/#blog" },
     },
   ],
 };
@@ -200,7 +238,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileJsonLd) }}
       />
       <Header />
       <Hero />

@@ -104,11 +104,11 @@ export default function Hero() {
                 }
               `}
             >
-              Let&apos;s build
+              Global Vision.
             </span>
 
             {/* MAIN TEXT */}
-            <div className="lg:text-[120px] font-bold leading-[0.85] overflow-hidden">
+            <div className="lg:text-[120px] font-bold leading-[0.85]">
               <h1 className="font-sans font-extrabold tracking-tight">
                 
                 <span
@@ -121,20 +121,7 @@ export default function Hero() {
                     }
                   `}
                 >
-                  what
-                </span>
-
-                <span
-                  className={`
-                    block transition-all duration-[1400ms] delay-300
-                    ${
-                      isLoaded
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-24 opacity-0"
-                    }
-                  `}
-                >
-                  doesn&apos;t
+                  
                 </span>
 
                 <span
@@ -147,7 +134,7 @@ export default function Hero() {
                     }
                   `}
                 >
-                  exist.
+                  Timeless Legacy.
                 </span>
 
               </h1>
