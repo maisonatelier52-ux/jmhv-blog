@@ -33,7 +33,7 @@ export default function Footer() {
             className={`
               h-[4px] bg-white
               origin-left
-              transition-transform duration-3000 ease-out
+              transition-transform duration-2000 ease-out-cubic
               ${visible ? "scale-x-100" : "scale-x-0"}
             `}
           />
